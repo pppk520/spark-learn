@@ -10,8 +10,11 @@ public class Pi {
     private static final int NUM_SAMPLES = 100;
     
     public static void main(String[] args) {
-        SparkConf sparkConfig = new SparkConf().setAppName("hello").set("spark.default.parallelism", "16")
-                .set("spark.executor.cores", "4");
+        SparkConf sparkConfig = 
+                 new SparkConf().setAppName("Pi")
+                                .set("spark.default.parallelism", "2")
+                                .set("spark.executor.memory", "512m")
+                                .set("spark.executor.cores", "1");
         
         JavaSparkContext sparkContext = new JavaSparkContext(sparkConfig);
 

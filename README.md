@@ -35,7 +35,7 @@ $ sudo docker network ls
 ```
 
 > ERROR: Pool overlaps with other one on this address space
-Solution> sudo docker network prune
+> Solution> sudo docker network prune
 
 
 ## System Info
@@ -94,7 +94,7 @@ $ vim docker/base/Dockerfile
 ENV SPARK_VERSION=2.4.2
 -----------
 $ sudo ./build-images.sh
-$ docker-compose up
+$ sudo docker-compose up
 ```
 The Docker compose will create the following containers:
 
@@ -105,6 +105,17 @@ spark-worker-1|10.5.0.3
 spark-worker-2|10.5.0.4
 spark-worker-3|10.5.0.5
 
+## Submit Spark Job
+
+## Check Job Status
+
+Spark Master
+http://[IP_OR_DNS].westus.cloudapp.azure.com:8080
+
+## Connect to Spark Worker
+```
+docker exec -ti spark-worker-2 /bin/bash
+```
 
 
 
